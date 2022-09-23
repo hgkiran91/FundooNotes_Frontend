@@ -1,0 +1,42 @@
+<mat-card class="main">
+    <form [formGroup]="loginForm">
+        <div class="title">
+            <span class="label" style="color:#FF0000">F</span>
+            <span class="label" style="color:#66CC66">u</span>
+            <span class="label" style="color:#FF9966">n</span>
+            <span class="label" style="color:#FFCCCC">d</span>
+            <span class="label" style="color:#FF0066">o</span>
+            <span class="label" style="color:#FF0000">o</span>
+            <span class="label" style="color:#66CC66">N</span>
+            <span class="label" style="color:#FF9966">o</span>
+            <span class="label" style="color:#FFCCCC">t</span>
+            <span class="label" style="color:#FF0066">e</span>
+            <span class="label" style="color:#FF0066">s</span>
+        </div>
+        <div class="title1">Sign in</div>
+        <div class="title2">Use your Fundoo Account</div>
+
+        <div class="name">
+            <mat-form-field appearance="outline" style="width: 30vw">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="" formControlName="email">
+                <mat-error>Enter valid email</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="pass">
+            <mat-form-field appearance="outline" style="width: 30vw">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="" formControlName="password">
+                <mat-error>Enter valid password</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="title3">Forgot email?</div>
+        <div class="title4">Not your computer? Use Guest mode to sign in privately.</div>
+        <div class="title5">Learn more</div>
+
+        <div class="end">
+                <button mat-button>Create account</button>
+            <button mat-raised-button color="primary">Next</button>
+        </div>
+    </form>
+</mat-card>

@@ -1,0 +1,80 @@
+<mat-card class="main">
+    <form [formGroup]="registerForm">
+        <div class="left-div">
+            <div class="title">
+                <span class="label" style="color:#FF0000">F</span>
+                <span class="label" style="color:#66CC66">u</span>
+                <span class="label" style="color:#FF9966">n</span>
+                <span class="label" style="color:#FFCCCC">d</span>
+                <span class="label" style="color:#FF0066">o</span>
+                <span class="label" style="color:#FF0000">o</span>
+                <span class="label" style="color:#66CC66">N</span>
+                <span class="label" style="color:#FF9966">o</span>
+                <span class="label" style="color:#FFCCCC">t</span>
+                <span class="label" style="color:#FF0066">e</span>
+                <span class="label" style="color:#FF0066">s</span>
+                <h1>Create your Fundoo Account</h1>
+            </div>
+
+            <div class="name">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Firstname</mat-label>
+                        <input matInput placeholder="" formControlName="firstName">
+                        <mat-error>Enter firstname</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="lname">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Lastname</mat-label>
+                        <input matInput placeholder="" formControlName="lastName">
+                        <mat-error>Enter lastname</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="uname">
+                <mat-form-field appearance="outline" style="width: 31.3vw">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="" formControlName="email">
+                    <mat-error>Enter Username</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="othertext1">Use my current email address instead</div>
+
+            <div class="password">
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="" formControlName="password">
+                        <mat-error>Enter password</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="pass">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput placeholder="">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="othertext2">Use 6 or more characters with a mix of letters, numbers & symbols</div>
+
+            <div class="sign">
+                <mat-checkbox class="example-margin">Show password</mat-checkbox>
+            </div>
+
+            <div class="end">
+                <div>sign in instead</div>
+                <button mat-raised-button color="primary">Next</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="right-block">
+        <img class="logo" src="assets\images\images.png" alt="FundooNotesLogo">
+        <div class="right-div">One account. All of Google working for you.</div>
+    </div>
+</mat-card>
