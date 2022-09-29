@@ -11,7 +11,7 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient) { }
 
-  postService(url: string, data: any, token: boolean, httpOptions: any={}){
+  postService(url: string, data: any, token: boolean = false, httpOptions: any={}){
     return this.httpClient.post(this.baseUrl+url, data, token && httpOptions)
   }
 }
