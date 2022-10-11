@@ -1,0 +1,49 @@
+<div class="icons">
+
+    <div>
+        <button class="icondiv">
+            <mat-icon>
+                <img src="../../../assets/images/remind_me.png" alt="remind_me" width="20vw">
+            </mat-icon>
+        </button>
+    </div>
+    <div>
+        <button class="icondiv">
+            <mat-icon>
+                <img src="../../../assets/images/collaborator.png" alt="collaborator" width="20vw">
+            </mat-icon>
+        </button>
+    </div>
+    <div>
+        <button class="icondiv">
+            <mat-icon>
+                <img src="../../../assets/images/color.png" alt="color" width="20vw">
+            </mat-icon>
+        </button>
+    </div>
+    <div>
+        <button class="icondiv">
+            <mat-icon>
+                <img src="../../../assets/images/new_note.png" alt="add_image" width="20vw">
+            </mat-icon>
+        </button>
+    </div>
+    <div>
+        <button class="icondiv" (click)="archiveNote()">
+            <mat-icon>
+                <img src="../../../assets/images/archive.png" alt="archive" width="20vw">
+            </mat-icon>
+        </button>
+    </div>
+    <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>
+                <img src="../../../assets/images/more.png" alt="more" width="20vw">
+            </mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="matdiv">
+            <button class="deletediv" mat-menu-item (click)="deleteNote()">Delete note</button>
+            <!-- <button class="deletediv" mat-menu-item (click)="deleteNote()">Add label</button> -->
+        </mat-menu>
+    </div>
+</div>

@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       }
       this.userService.login(reqdata).subscribe((response: any) => {
         console.log("Login api test", response);
+        localStorage.setItem('Token', response.data)
       }), (error: any) => {
         console.log("The error is: ", error);
       }

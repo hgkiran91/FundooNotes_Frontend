@@ -17,6 +17,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -24,6 +25,11 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CreateNoteComponent } from './components/create-note/create-note.component';
+import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
+import { DisplayAllNotesComponent } from './components/display-all-notes/display-all-notes.component';
+import { IconsComponent } from './components/icons/icons.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateNoteComponent,
+    GetAllNotesComponent,
+    DisplayAllNotesComponent,
+    IconsComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +63,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

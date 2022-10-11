@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    // border: 1px solid rgb(0, 4, 255);
+    
 
 }
 
@@ -17,12 +17,12 @@
 
 }
 
-.example-is-mobile .toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    z-index: 2;
-    // border: 1px solid red;
-}
+// .example-is-mobile .toolbar {
+//     position: fixed;
+//     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+//     z-index: 2;
+//     // border: 1px solid red;
+// }
 
 // h1.example-app-name {
 //   margin-left: 8px;
@@ -35,44 +35,22 @@
     // border: solid yellow;
 }
 
-.example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-}
+// .example-is-mobile .example-sidenav-container {
+//     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+//        `<body>` to be our scrolling element for mobile layouts. */
+//     flex: 1 0 auto;
+// }
 
 .searchdiv {
     margin-left: 10%;
-    width: 100%;
-    margin-right: 10%;
+    width: 80%;
+    // margin-right: 10%;
 }
 
 .search {
     border-radius: 10%;
-    width: 50%;
+    width: 80%;
     background: rgba(0, 0, 0, 0.02);
-}
-
-.icondiv {
-    width: 40%;
-}
-
-.icon {
-    width: 25px;
-    height: 25px;
-}
-
-.top_icon {
-    width: 50%;
-}
-
-.sec_top_icon {
-    width: 30%;
-}
-
-.sideview {
-    // border: solid red;
-
 }
 
 .click {
@@ -111,32 +89,21 @@
     // border: solid red;
 }
 
-
-//Take note
-.matcard {
-    box-shadow: 0 0 6px;
-    padding: 0;
-    // border: 1px solid rgb(240, 15, 15);
+.icondiv1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    margin-left: 150px;
+    // border: solid red;
 }
 
-.img2 {
-    opacity: 0.6;
-    height: 25px;
-}
-
-.takenote {
-    width: 100%;
-}
-
-.inputboxsize {
-    height: 40px;
-    padding-left: 2%;
-}
-
-.main{
-    padding-left: 25%;
-    margin-bottom: 30%;
-    // position: absolute;
-    // right: 30%;
-    // bottom: 50%;
+.icondiv2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 9%;
+    // margin-left: 150px;
+    border: solid red;
 }

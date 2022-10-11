@@ -1,0 +1,23 @@
+<!-- <p>display-all-notes works!</p> -->
+
+<div class="main">
+    <mat-card *ngFor="let notes of NotesList" class="matcard">
+        <div class="notediv">
+
+            <div class="upperdiv" (click)="openDialog(notes)">
+                {{notes.Title}}
+                <img class="pindiv" src="../../../assets/images/pin.png" width="20vw" />
+            </div>
+            <div (click)="openDialog(notes)">
+                {{notes.Descreption}}
+            </div>
+            <!-- <div>
+                {{notes._id}}
+            </div> -->
+        </div>
+
+        <div>
+            <app-icons class="icons" [notecard]=notes></app-icons>
+        </div>
+    </mat-card>
+</div>

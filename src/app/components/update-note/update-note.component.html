@@ -1,0 +1,39 @@
+<!-- <p>update-note works!</p> -->
+<!-- <div>
+    <div>
+        <div class="titlediv">
+            <input style="outline: none; background-color: white; border: none;" type="text" [(ngModel)]="Title">
+            <img src="../../../assets/images/pin.png" alt="pin" width="20vw">
+        </div>
+        <p></p>
+        <div>
+            <input style="outline: none; background-color: white; border: none;" type="text" [(ngModel)]="Descreption">
+        </div>
+    </div>
+    <div class="bottomdiv">
+        <app-icons class="appiconsdiv"></app-icons>
+        <button (click)="onNoClick()" style="outline: none; background-color: white; border: none;">Close</button>
+    </div>
+</div> -->
+
+
+<form [formGroup]="updateNoteForm" (ngSubmit)="updateNote()">
+    <div>
+        <div>
+            <div class="titlediv">
+                <input style="outline: none; background-color: white; border: none;" type="text" matInput
+                    placeholder="Title" formControlName="Title">
+                <img src="../../../assets/images/pin.png" alt="pin" width="20vw">
+            </div>
+            <p></p>
+            <div>
+                <input style="outline: none; background-color: white; border: none;" type="text" matInput
+                    placeholder="Descreption..." formControlName="Descreption">
+            </div>
+        </div>
+        <div class="bottomdiv">
+            <app-icons></app-icons>
+            <button (click)="onNoClick()" style="outline: none; background-color: white; border: none;">Close</button>
+        </div>
+    </div>
+</form>
