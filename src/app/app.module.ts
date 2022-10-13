@@ -10,14 +10,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -30,6 +30,8 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { DisplayAllNotesComponent } from './components/display-all-notes/display-all-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+
+import { AuthGuardService } from './services/authGuardService/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,10 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     FlexLayoutModule,
     MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuardService
+  ],
+  bootstrap: [
+    AppComponent]
 })
 export class AppModule { }

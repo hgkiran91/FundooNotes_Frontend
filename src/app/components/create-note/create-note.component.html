@@ -19,20 +19,25 @@
             <div class="topdiv">
                 <div class="titlediv">
                     <input formControlName="Title" class="inputboxsize" matInput placeholder="Title">
-                </div>
-                <div class="pindiv">
                     <img src="../../../assets/images/pin.png" alt="pin" width="20vw">
                 </div>
+                <!-- <div class="pindiv">
+                    <img src="../../../assets/images/pin.png" alt="pin" width="20vw">
+                </div> -->
             </div>
+            <p></p>
             <div class="bottomdiv">
                 <div class="takediv">
                     <input formControlName="Descreption" class="inputboxsize" matInput placeholder="Descreption...">
                 </div>
             </div>
             <div class="closediv">
+                <div class="appicons">
+                    <app-icons></app-icons>
+                </div>
                 <button mat-button (click)="ngSubmit()">Close</button>
             </div>
-            <app-icons></app-icons>
+
         </mat-card>
     </form>
 </div>

@@ -10,6 +10,8 @@ export class IconsComponent implements OnInit {
 
   @Input() notecard: any
 
+  colorList = ['white', '#e2725b', '#ffae42', '#fefe33', '#77dd77', '#40e0d0', '#a4dded', '#77b5fe', '#ba55d3', '#ffb3de', '#c19a6b', '#d3d3d3']
+
   constructor(private noteService: NotesService) { }
 
   ngOnInit(): void {
@@ -32,9 +34,18 @@ export class IconsComponent implements OnInit {
     this.noteService.archiveNoteById(this.notecard._id).subscribe((response: any) => {
       console.log("Archive note api test", response);
       console.log("NoteId", this.notecard._id);
-      
+
     }), (error: any) => {
       console.log("The error", error);
     }
+  }
+
+  addColor(color: any) {
+    let reqdata = {
+      color: color,
+    }
+    this.noteService.updateNoteById(reqdata, this.notecard._id).subscribe((response: any) => {
+      console.log("Color api test", response);
+    })
   }
 }

@@ -1,40 +1,61 @@
 <div class="icons">
 
+    <!-- Remind_me div -->
     <div>
-        <button class="icondiv">
+        <button class="icondiv" mat-icon-button>
             <mat-icon>
                 <img src="../../../assets/images/remind_me.png" alt="remind_me" width="20vw">
             </mat-icon>
         </button>
     </div>
+
+    <!-- Collaborator div -->
     <div>
-        <button class="icondiv">
+        <button class="icondiv" mat-icon-button>
             <mat-icon>
                 <img src="../../../assets/images/collaborator.png" alt="collaborator" width="20vw">
             </mat-icon>
         </button>
     </div>
+
+    <!-- Color Div -->
     <div>
-        <button class="icondiv">
+        <button class="icondiv" mat-icon-button [matMenuTriggerFor]="color"
+            aria-label="Example icon-button with a menu">
             <mat-icon>
                 <img src="../../../assets/images/color.png" alt="color" width="20vw">
             </mat-icon>
         </button>
+        <mat-menu #color="matMenu">
+            <div class="color" style="display: flex; flex-flow: row wrap;">
+                <div *ngFor="let colors of colorList" style="width: 15%; height: 10%">
+                    <button mat-menu-item (click)="addColor(colors)">
+                        <mat-icon [ngStyle]="{color:colors}">circle</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-menu>
     </div>
+
+    <!-- Add_Image div -->
     <div>
-        <button class="icondiv">
+        <button class="icondiv" mat-icon-button>
             <mat-icon>
                 <img src="../../../assets/images/new_note.png" alt="add_image" width="20vw">
             </mat-icon>
         </button>
     </div>
+
+    <!-- Archive div -->
     <div>
-        <button class="icondiv" (click)="archiveNote()">
+        <button class="icondiv" mat-icon-button (click)="archiveNote()">
             <mat-icon>
                 <img src="../../../assets/images/archive.png" alt="archive" width="20vw">
             </mat-icon>
         </button>
     </div>
+
+    <!-- More div -->
     <div>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>
@@ -42,8 +63,7 @@
             </mat-icon>
         </button>
         <mat-menu #menu="matMenu" class="matdiv">
-            <button class="deletediv" mat-menu-item (click)="deleteNote()">Delete note</button>
-            <!-- <button class="deletediv" mat-menu-item (click)="deleteNote()">Add label</button> -->
+            <button mat-menu-item (click)="deleteNote()">Delete note</button>
         </mat-menu>
     </div>
 </div>
