@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NotesService } from 'src/app/services/noteService/notes.service';
 
@@ -10,6 +10,9 @@ import { NotesService } from 'src/app/services/noteService/notes.service';
 export class CreateNoteComponent implements OnInit {
   noteForm!: FormGroup
   submitted = false;
+
+  @Output() messageFromCreate = new EventEmitter<any>();
+
   constructor(private formBuilder: FormBuilder, private noteService: NotesService) { }
 
   ngOnInit(): void {
@@ -29,6 +32,7 @@ export class CreateNoteComponent implements OnInit {
       console.log("Data", reqdata);
       this.noteService.addNote(reqdata).subscribe((response: any) => {
         console.log("Create note api test", response);
+        this.messageFromCreate.emit(response);
       }), (error: any) => {
         console.log("The error", error);
       }
@@ -55,4 +59,8 @@ export class CreateNoteComponent implements OnInit {
   //   }
   // }
 
+}
+
+function output() {
+  throw new Error('Function not implemented.');
 }

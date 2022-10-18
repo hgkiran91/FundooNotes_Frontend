@@ -1,4 +1,8 @@
 <p></p>
-<app-create-note class="notes"></app-create-note>
+<app-create-note class="notes" (messageFromCreate)="receiveEventFromCreate($event)"></app-create-note>
 <p></p>
-<app-display-all-notes [NotesList] = "notesArray"></app-display-all-notes>
+<app-display-all-notes [NotesList]="notesArray" (messageFromDisplayToGetAllNotes)="receiveEventFromDisplay($event)"
+    (messageFromUpdateToDisplayAndToGetAllNotes)="receiveResponseFromDisplayByUpdate($event)"
+    (messageFromDisplayToGetAllNotes)="receiveResponseFromDisplayByColor($event)"
+    (messageFromDisplayToGetAllNotesByArchive)="receiveEventFromDisplayByArchive($event)">
+</app-display-all-notes>

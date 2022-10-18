@@ -20,11 +20,35 @@ export class GetAllNotesComponent implements OnInit {
       console.log("Request data: ", request);
       this.notesArray = request.data;
       this.notesArray.reverse()
-      let noteList = this.notesArray.filter((note: any) => {
+      this.notesArray = this.notesArray.filter((note: any) => {
         return note?.isDeleted == false && note?.isArchived == false
       })
-      console.log("List of notes", noteList);
+      console.log("List of notes", this.notesArray);
       // console.log(this.notesArray);
     })
+  }
+
+  receiveEventFromDisplay($event: any) {
+    console.log($event);
+    this.getAllNotes();
+  }
+
+  receiveResponseFromDisplayByUpdate($event: any) {
+    console.log($event);
+    this.getAllNotes();
+  }
+
+  receiveEventFromCreate($event: any) {
+    this.getAllNotes();
+  }
+
+  receiveResponseFromDisplayByColor($event: any) {
+    console.log($event);
+    this.getAllNotes();
+  }
+
+  receiveEventFromDisplayByArchive($event: any) {
+    console.log($event);
+    this.getAllNotes();
   }
 }

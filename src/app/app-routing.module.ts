@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 
 const routes: Routes = [
   { path: 'signup', component: RegistrationComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard],
     children: [
-      { path: 'notes', component: GetAllNotesComponent }
+      { path: 'notes', component: GetAllNotesComponent },
+      {path: 'archive', component: ArchiveNoteComponent},
+      {path: 'trash', component: TrashNoteComponent}
     ]
   },
   { path: 'icons', component: IconsComponent }

@@ -17,10 +17,12 @@
 
 
             <div class="icons">
-                <app-icons [notecard]=notes></app-icons>
+                <app-icons [notecard]="notes" (deleteEvent)="receiveResponseFromDeleteIcons($event)"
+                    (colorEvent)="receiveResponseFromColorIcon($event)"
+                    (archiveEvent)="receiveResponseFromArchiveIcons($event)"></app-icons>
             </div>
         </div>
 
-        
+
     </mat-card>
 </div>

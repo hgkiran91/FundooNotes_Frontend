@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NotesService } from 'src/app/services/noteService/notes.service';
@@ -12,11 +12,11 @@ export class UpdateNoteComponent implements OnInit {
   updateNoteForm!: FormGroup
 
   submitted = false;
-  // @Input() notecard: any
 
   Title: any
   Descreption: any
   noteId: any
+
   constructor(
     public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder, private notesService: NotesService) {
@@ -29,7 +29,7 @@ export class UpdateNoteComponent implements OnInit {
     // this.Descreption = data.Descreption
     this.noteId = data._id
     this.updateNoteForm.patchValue({
-      Title: data.Title, 
+      Title: data.Title,
       Descreption: data.Descreption
     })
   }
@@ -50,9 +50,10 @@ export class UpdateNoteComponent implements OnInit {
         Descreption: this.updateNoteForm.value.Descreption
       }
       console.log("NoteID", this.noteId);
-      
+
       this.notesService.updateNoteById(reqdata, this.noteId).subscribe((response: any) => {
         console.log("Update note api test:", response)
+        this.dialogRef.close(response);
       }), (error: any) => {
         console.log("error", error);
       }

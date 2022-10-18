@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/noteService/notes.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { NotesService } from 'src/app/services/noteService/notes.service';
 export class IconsComponent implements OnInit {
 
   @Input() notecard: any
+  @Output() deleteEvent = new EventEmitter<any>()
+  @Output() colorEvent = new EventEmitter<any>()
+  @Output() archiveEvent = new EventEmitter<any>()
 
   colorList = ['white', '#e2725b', '#ffae42', '#fefe33', '#77dd77', '#40e0d0', '#a4dded', '#77b5fe', '#ba55d3', '#ffb3de', '#c19a6b', '#d3d3d3']
 
@@ -25,6 +28,7 @@ export class IconsComponent implements OnInit {
     // }
     this.noteService.deleteNoteById(this.notecard._id).subscribe((response: any) => {
       console.log("Delete note api test", response);
+      this.deleteEvent.emit(response);
     }), (error: any) => {
       console.log("The error", error);
     }
@@ -33,8 +37,8 @@ export class IconsComponent implements OnInit {
   archiveNote() {
     this.noteService.archiveNoteById(this.notecard._id).subscribe((response: any) => {
       console.log("Archive note api test", response);
-      console.log("NoteId", this.notecard._id);
-
+      // console.log("NoteId", this.notecard._id);
+      this.archiveEvent.emit(response);
     }), (error: any) => {
       console.log("The error", error);
     }
@@ -46,6 +50,9 @@ export class IconsComponent implements OnInit {
     }
     this.noteService.updateNoteById(reqdata, this.notecard._id).subscribe((response: any) => {
       console.log("Color api test", response);
-    })
+      this.colorEvent.emit(response);
+    }), (error: any) => {
+      console.log("The error", error);
+    }
   }
 }

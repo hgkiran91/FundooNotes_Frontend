@@ -32,6 +32,9 @@ import { IconsComponent } from './components/icons/icons.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 import { AuthGuardService } from './services/authGuardService/auth-guard.service';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { SearchPipePipe } from './pipe/search-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { AuthGuardService } from './services/authGuardService/auth-guard.service
     GetAllNotesComponent,
     DisplayAllNotesComponent,
     IconsComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    ArchiveNoteComponent,
+    TrashNoteComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,

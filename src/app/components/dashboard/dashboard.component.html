@@ -14,8 +14,8 @@
           <mat-icon id="search" matTooltip="Search">search</mat-icon>
         </button>
 
-        <input fxFlex="50" matInput placeholder="Search" [style.fontSize.px]="16" class="search-window"
-          autocomplete="off" type="text" />
+        <input fxFlex="50" matInput placeholder="Search" (keyup)="titleSearch($event)" [style.fontSize.px]="16"
+          class="search-window" autocomplete="off" type="text" />
       </mat-form-field>
     </div>
     <div class="icondiv1">
@@ -37,29 +37,42 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56 ">
       <mat-list>
-        <div class="click sidebar-item" fxLayoutGap="30px">
-          <img src="../../../assets/images/note.png" width="25vw">
-          <span>Notes</span>
+        <div class="click sidebar-item" fxLayoutGap="30px" style="margin-left:-19%">
+          <button class="click sidebar-item" style="display: flex; justify-content:space-around; margin-right: 20%;"
+            routerLink="notes">
+            <img src="../../../assets/images/note.png" width="25vw">
+            <span style="margin-left: -33%">Notes</span>
+          </button>
         </div>
 
-        <div class="click sidebar-item" fxLayoutGap="30px">
-          <img src="../../../assets/images/reminder.png" width="25vw">
-          <span>Reminder</span>
+        <div class="click sidebar-item" fxLayoutGap="30px" style="margin-left:-14%;">
+          <button class="click sidebar-item" style="display: flex; justify-content:space-around; margin-right: 20%;">
+            <img src="../../../assets/images/reminder.png" width="25vw">
+            <span style="margin-left: -19%;">Reminder</span>
+          </button>
         </div>
 
-        <div class="click sidebar-item" fxLayoutGap="30px">
-          <img src="../../../assets/images/label.png" width="25vw">
-          <span>Edit lebels</span>
+        <div class="click sidebar-item" fxLayoutGap="30px" style="margin-left: -12%">
+          <button class="click sidebar-item" style="display: flex; justify-content:space-around; margin-right: 20%;">
+            <img src="../../../assets/images/label.png" width="25vw">
+            <span style="margin-left: -15%">Edit lebels</span>
+          </button>
         </div>
 
-        <div class="click sidebar-item" fxLayoutGap="30px">
-          <img src="../../../assets/images/archive.png" width="25vw">
-          <span>Archive</span>
+        <div class="click sidebar-item" fxLayoutGap="30px" style="margin-left: -16%">
+          <button class="click sidebar-item" style="display: flex; justify-content:space-around; margin-right: 20%;"
+            routerLink="archive">
+            <img src="../../../assets/images/archive.png" width="25vw">
+            <span style="margin-left: -24%">Archive</span>
+          </button>
         </div>
 
-        <div class="click sidebar-item" fxLayoutGap="30px">
-          <img src="../../../assets/images/trash.png" width="25vw">
-          <span>Trash</span>
+        <div class="click sidebar-item" fxLayoutGap="30px" style="margin-left: -19%">
+          <button class="click sidebar-item" style="display: flex; justify-content:space-around; margin-right: 20%;"
+            routerLink="trash">
+            <img src="../../../assets/images/trash.png" width="25vw">
+            <span style="margin-left: -33%">Trash</span>
+          </button>
         </div>
       </mat-list>
     </mat-sidenav>
