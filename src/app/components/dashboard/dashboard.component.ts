@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { DataService } from 'src/app/services/dataService/data.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -9,6 +10,7 @@ import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
     mobileQuery: MediaQueryList
+    message: any;
 
     // constructor() { }
 
@@ -24,7 +26,7 @@ export class DashboardComponent implements OnInit {
         { length: 6 },
     );
 
-    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private data: DataService) {
         this.mobileQuery = media.matchMedia('(max-width: 600px)');
         this._mobileQueryListener = () => changeDetectorRef.detectChanges();
         this.mobileQuery.addListener(this._mobileQueryListener);
@@ -38,6 +40,6 @@ export class DashboardComponent implements OnInit {
     }
 
     titleSearch(event: any) {
-
+        this.data.changeMessage(this.message);
     }
 }

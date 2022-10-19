@@ -9,6 +9,8 @@ export class SearchPipePipe implements PipeTransform {
     if (value.length === 0 || filterString === '') {
       return value;
     }
+    return value.filter((x: any) => x.Title.toLocaleLowerCase().includes(filterString)
+      || x.Descreption.toLocaleLowerCase().includes(filterString));
   }
 
 }

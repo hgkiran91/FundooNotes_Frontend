@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
+import { NotesService } from 'src/app/services/noteService/notes.service';
+import { DataService } from 'src/app/services/dataService/data.service';
 
 @Component({
   selector: 'app-display-all-notes',
@@ -15,15 +17,31 @@ export class DisplayAllNotesComponent implements OnInit {
   @Output() messageFromDisplayToGetAllNotesByArchive = new EventEmitter<any>();
 
   messageFromDelete: any;
-  filterString: any;
+
 
   messageFromUpdate: any;
   messageFromColor: any;
   messageFromArchive: any;
+  filterString: any;
 
-  constructor(public dialog: MatDialog) { }
+  userNote = new Array();
+
+  constructor(public dialog: MatDialog, private notessService: NotesService, private data: DataService) { }
 
   ngOnInit(): void {
+    this.viewAllNotes();
+    this.data.currentMessage.subscribe(message => this.filterString = message)
+  }
+
+  viewAllNotes() {
+    this.notessService.getAllNotes().subscribe((items: any) => {
+      console.log("All notes of User:", items);
+      for (var i of items.data) {
+        if (i.isArchived == false && i.isDeleted == false) {
+          this.userNote.push(i);
+        }
+      }
+    })
   }
 
   openDialog(notesObject: any): void {

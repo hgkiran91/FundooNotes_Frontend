@@ -14,7 +14,7 @@
           <mat-icon id="search" matTooltip="Search">search</mat-icon>
         </button>
 
-        <input fxFlex="50" matInput placeholder="Search" (keyup)="titleSearch($event)" [style.fontSize.px]="16"
+        <input fxFlex="50" matInput placeholder="Search" [(ngModel)]="message" (keyup)="titleSearch($event)" [style.fontSize.px]="16"
           class="search-window" autocomplete="off" type="text" />
       </mat-form-field>
     </div>

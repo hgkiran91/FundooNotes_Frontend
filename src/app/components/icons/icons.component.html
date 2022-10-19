@@ -28,8 +28,9 @@
         </button>
         <mat-menu #color="matMenu">
             <div class="color" style="display: flex; flex-flow: row wrap;">
-                <div *ngFor="let colors of colorList" style="width: 15%; height: 10%">
-                    <button mat-menu-item (click)="addColor(colors)">
+                <div *ngFor="let colors of colorList" style="width: 15%; height: 10%;">
+                    <button mat-menu-item (click)="addColor(colors)"
+                        style=" border-radius:50%;">
                         <mat-icon [ngStyle]="{color:colors}">circle</mat-icon>
                     </button>
                 </div>

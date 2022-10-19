@@ -1,7 +1,7 @@
 <!-- <p>display-all-notes works!</p> -->
 
 <div class="main">
-    <mat-card *ngFor="let notes of NotesList" class="matcard" [ngStyle]="{'background-color': notes.color}">
+    <mat-card *ngFor="let notes of NotesList | searchPipe: filterString" class="matcard" [ngStyle]="{'background-color': notes.color}">
         <div class="notediv" style="width: 210px;">
 
             <div class="upperdiv" (click)="openDialog(notes)">
